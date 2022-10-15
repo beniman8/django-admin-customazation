@@ -1,6 +1,7 @@
 from django.contrib import admin
 from . import forms
 from . import models
+from django_summernote.admin import SummernoteModelAdmin
 
 
 class BlogAdminArea(admin.AdminSite):
@@ -13,6 +14,8 @@ class BlogAdminArea(admin.AdminSite):
 blog_site = BlogAdminArea(name='BlogAdmin')
 
 
+class SummerAdmin(SummernoteModelAdmin):
+    summernote_fields = '__all__'
 
 
 
@@ -50,7 +53,7 @@ blog_site.register(models.posts,PostAdmin)
 # class PostAdmin(admin.ModelAdmin):
 #     fields = ['title','author']
 
-admin.site.register(models.Post,PostAdmin)
+admin.site.register(models.Post,SummerAdmin)
 
 
 #another way to do the samething is to @admin.register on top of the class 

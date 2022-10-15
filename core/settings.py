@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookstore',
     'blog',
+    'django_summernote'
 ]
 
 MIDDLEWARE = [
@@ -120,7 +121,7 @@ USE_TZ = True
 
 
 #py manage.py findstatic --verbosity 2 login.css  how to search for static files if they are not loading properly
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 #This is to be used on live server 
 # STATIC_ROOT = os.path.join(BASE_DIR,"static")
@@ -130,8 +131,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static")
 ]
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR,"media/")
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
