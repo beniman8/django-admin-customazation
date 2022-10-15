@@ -1,4 +1,4 @@
-from email.policy import default
+
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -29,7 +29,7 @@ class Post(models.Model):
     )
 
     category = models.ForeignKey("Category", on_delete=models.PROTECT,default=1)
-    title = models.CharField(max_length=250)
+    title = models.CharField(max_length=250,help_text='This is a title')
     excerpt  = models.TextField(null=True)
     slug  = models.SlugField(max_length=250,unique_for_date ='publish')
     publish  = models.DateTimeField(default=timezone.now)
