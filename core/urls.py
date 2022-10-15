@@ -18,11 +18,16 @@ from django.urls import path
 from blog.admin import blog_site
 from bookstore.admin import bookstore_site
 
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin2/', blog_site.urls),
     path('admin3/', bookstore_site.urls),
 ]
+
+#to serve the static within the local developement
+urlpatterns +=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 
 #TODO You can add this to your setup.sh file
 admin.site.index_title = "The book Store"

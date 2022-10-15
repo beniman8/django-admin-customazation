@@ -7,6 +7,7 @@ class BlogAdminArea(admin.AdminSite):
     site_header = 'Blog Admin Area'
     site_title = 'Blog Admin Area'
     site_title = 'Site Blog Admin Area'
+    login_template = 'blog/admin/login.html'
 
 
 blog_site = BlogAdminArea(name='BlogAdmin')
