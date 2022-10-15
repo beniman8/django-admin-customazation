@@ -1,4 +1,9 @@
 from django.apps import AppConfig
+# from django.contrib.admin.apps import AdminConfig
+
+#overwriting the default login area to the one you want 
+# class BlogAdminConfig(AdminConfig):
+#     default_site = 'blog.admin.BlogAdminArea'
 
 
 class BlogConfig(AppConfig):

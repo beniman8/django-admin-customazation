@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from blog.admin import blog_site
+from bookstore.admin import bookstore_site
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('admin2/', blog_site.urls),
+    path('admin3/', bookstore_site.urls),
 ]
 
 #TODO You can add this to your setup.sh file
